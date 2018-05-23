@@ -1,0 +1,16 @@
+.idea/*
+.DS_Store
+Thumbs.db
+dist
+npm-debug.log
+node_modules
+electron-*
+*.mo
+.pc
+*.log
+*.substvars
+*.EX
+dummy.tar.bz2
+rpmbuild/
+build/whatsapp-desktop
+build/whatsapp-desktop.deb

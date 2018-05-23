@@ -1,11 +1,8 @@
-# WhatsApp Desktop [![Build Status](https://travis-ci.org/Enrico204/Whatsapp-Desktop.svg?branch=master)](https://travis-ci.org/Enrico204/Whatsapp-Desktop)
+# WhatsApp Desktop
 
 WhatsApp desktop client, based on the official WhatsApp web app. Build with [Electron](http://electron.atom.io/).  
 
 This is **NOT** an official product. This project does not attempt to reverse engineer the WhatsApp API or attempt to reimplement any part of the WhatsApp client. Any communication between the user and WhatsApp servers is handled by official WhatsApp Web itself; this is just a native wrapper for WhatsApp Web, like a browser.
-
-Thanks to **packagecloud** for providing us a repository at https://packagecloud.io/Enrico204/Whatsapp-Desktop
-[![packagecloud.io](https://packagecloud.io/images/packagecloud-badge.png "packagecloud.io")](https://packagecloud.io/)
 
 Original version of WhatsApp Desktop was written by @bcalik there: https://github.com/bcalik/Whatsapp-Desktop
 
@@ -33,61 +30,17 @@ Original version of WhatsApp Desktop was written by @bcalik there: https://githu
 
 ## Repositories
 
-Packagecloud provides us a repository at: https://packagecloud.io/Enrico204/Whatsapp-Desktop
-
 Note that these repos are available only for `amd64` (deb+rpm) and `armhf/armv7l` (deb-only).
 
-### apt-based (like Debian, Ubuntu, Mint, ...)
+### Installation on Debian, Ubuntu, Mint, ...
 
-You can use that by adding this to `/etc/apt/sources.list`:
+You can build whatsapp-desktop.deb package and install:
 
-    deb https://packagecloud.io/Enrico204/Whatsapp-Desktop/debian/ stretch main
-
-and then by issuing:
-
-    apt-get install -y apt-transport-https curl gnupg
-    curl -L https://packagecloud.io/Enrico204/Whatsapp-Desktop/gpgkey | sudo apt-key add -
-    apt-get update
-    apt-get install whatsapp-desktop
-
-### rpm-based (like Red-hat, Fedora, ...)
-
-First install required software:
-
-    yum install pygpgme yum-utils
-
-Then create a file at `/etc/yum.repos.d/Enrico204_Whatsapp-Desktop.repo` with this content:
-
-    [Enrico204_Whatsapp-Desktop]
-    name=Enrico204_Whatsapp-Desktop
-    baseurl=https://packagecloud.io/Enrico204/Whatsapp-Desktop/el/6/$basearch
-    repo_gpgcheck=1
-    gpgcheck=0
-    enabled=1
-    gpgkey=https://packagecloud.io/Enrico204/Whatsapp-Desktop/gpgkey
-    sslverify=1
-    sslcacert=/etc/pki/tls/certs/ca-bundle.crt
-    metadata_expire=300
-
-Finally, update the local cache by issuing:
-
-    sudo yum -q makecache -y --disablerepo='*' --enablerepo='Enrico204_Whatsapp-Desktop'
-
-Now you can install the package by issuing `sudo yum install WhatsApp`
-
-### ArchLinux
-
-You'll need to enable AUR repositories, when you'll find this app with the name `whatsapp-desktop`.
-
-More information here: https://aur.archlinux.org/packages/whatsapp-desktop/
-
-A big thank you to @bil-elmoussaoui for maintaining ArchLinux package!
-
-## Pre-built packages
-
-**DEB** and **RPM** packages for amd64 and armv7l (armhf) are also hosted in [latest release page](https://github.com/Enrico204/Whatsapp-Desktop/releases)
-
-For all other platforms: you can download ZIP files from [latest release page](https://github.com/Enrico204/Whatsapp-Desktop/releases).
+    git clone https://github.com/oOthkOo/whatsapp-desktop.git
+    cd whatsapp-desktop
+    npm run build:linux
+    ./build-deb.sh
+    dpkg -i whatsapp-desktop.deb
 
 ## Screenshots
 

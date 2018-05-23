@@ -38,6 +38,7 @@ You can build whatsapp-desktop.deb package and install:
 
     git clone https://github.com/oOthkOo/whatsapp-desktop.git
     cd whatsapp-desktop
+    npm install
     npm run build:linux
     ./build-deb.sh
     dpkg -i whatsapp-desktop.deb

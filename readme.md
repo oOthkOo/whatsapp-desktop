@@ -32,6 +32,11 @@ Original version of WhatsApp Desktop was written by @bcalik there: https://githu
 
 Note that these repos are available only for `amd64` (deb+rpm) and `armhf/armv7l` (deb-only).
 
+### Install NPM and Yarn
+
+    * NPM  : https://nodejs.org/en/download/package-manager/
+    * Yarn : https://yarnpkg.com/lang/en/docs/install/
+
 ### Installation on Debian, Ubuntu, Mint, ...
 
 You can build whatsapp-desktop.deb package and install:
@@ -41,6 +46,7 @@ You can build whatsapp-desktop.deb package and install:
     npm install
     npm run build:linux
     ./build-deb.sh
+    cd build
     dpkg -i whatsapp-desktop.deb
 
 ## Screenshots

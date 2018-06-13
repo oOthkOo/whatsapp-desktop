@@ -44,13 +44,13 @@ You need NPM and Yarn to be installed on your system before building deb package
 You can build `whatsapp-desktop.deb` package with these shell commands:
 
 ```sh
-    git clone https://github.com/oOthkOo/whatsapp-desktop.git
-    cd whatsapp-desktop
-    npm install
-    npm run build:linux
-    ./build-deb.sh
-    cd build
-    dpkg -i whatsapp-desktop.deb
+git clone https://github.com/oOthkOo/whatsapp-desktop.git
+cd whatsapp-desktop
+npm install
+npm run build:linux
+./build-deb.sh
+cd build
+dpkg -i whatsapp-desktop.deb
 ```
 
 ## Repositories

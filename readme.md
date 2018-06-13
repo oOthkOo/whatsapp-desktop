@@ -28,19 +28,22 @@ Original version of WhatsApp Desktop was written by @bcalik there: https://githu
   * Set the size for the media thumbs
   * Proxy settings connect to WhatsApp web
 
-## Repositories
+## Install
 
-Note that these repos are available only for `amd64` (deb+rpm) and `armhf/armv7l` (deb-only).
+Follow these instructions to install `whatsapp-desktop` on your system.
 
 ### Install NPM and Yarn
 
-    * NPM  : https://nodejs.org/en/download/package-manager/
-    * Yarn : https://yarnpkg.com/lang/en/docs/install/
+You need NPM and Yarn to be installed on your system before building deb package.
 
-### Installation on Debian, Ubuntu, Mint, ...
+* NPM  : https://nodejs.org/en/download/package-manager/
+* Yarn : https://yarnpkg.com/lang/en/docs/install/
 
-You can build whatsapp-desktop.deb package and install:
+### Build and install Whatsapp on Debian, Ubuntu, Mint, ...
 
+You can build `whatsapp-desktop.deb` package with these shell commands:
+
+```sh
     git clone https://github.com/oOthkOo/whatsapp-desktop.git
     cd whatsapp-desktop
     npm install
@@ -48,6 +51,11 @@ You can build whatsapp-desktop.deb package and install:
     ./build-deb.sh
     cd build
     dpkg -i whatsapp-desktop.deb
+```
+
+## Repositories
+
+Note that these repos are available only for `amd64` (deb+rpm) and `armhf/armv7l` (deb-only).
 
 ## Screenshots
 

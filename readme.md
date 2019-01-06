@@ -1,6 +1,6 @@
 # WhatsApp Desktop
 
-WhatsApp desktop client, based on the official WhatsApp web app. Build with [Electron](http://electron.atom.io/).  
+Unofficial WhatsApp Desktop Client for OSX, Linux and Windows. Build with [Electron](http://electron.atom.io/).  
 
 This is **NOT** an official product. This project does not attempt to reverse engineer the WhatsApp API or attempt to reimplement any part of the WhatsApp client. Any communication between the user and WhatsApp servers is handled by official WhatsApp Web itself; this is just a native wrapper for WhatsApp Web, like a browser.
 
@@ -41,18 +41,20 @@ You need NPM and Yarn to be installed on your system before building deb package
 * NPM  : https://nodejs.org/en/download/package-manager/
 * Yarn : https://yarnpkg.com/lang/en/docs/install/
 
-### Build and install Whatsapp on Debian, Ubuntu, Mint, ...
+### Build Debian deb packages
 
-You can build `whatsapp-desktop.deb` package with these shell commands:
+You can build `whatsapp-desktop.deb` package with:
 
 ```sh
 git clone https://github.com/oOthkOo/whatsapp-desktop.git
 cd whatsapp-desktop
-npm install
-npm run build:linux
 ./build-deb.sh
-cd build
-dpkg -i whatsapp-desktop.deb
+```
+
+### Install Whatsapp on Debian, Ubuntu, Mint, ...
+
+``sh
+sudo dpkg -i ./build/whatsapp-desktop.deb
 ```
 
 ## Repositories

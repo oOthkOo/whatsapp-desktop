@@ -55,7 +55,7 @@
         app.quit();
     }
 
-    app.setAppUserModelId("it.enrico204.whatsapp-desktop");
+    app.setAppUserModelId("whatsapp-desktop");
     app.setAsDefaultProtocolClient("whatsapp");
 
     if (process.argv.indexOf("--debug-log") >= 0) {
@@ -68,7 +68,7 @@
         app.disableHardwareAcceleration();
     }
 
-    log.info("Log init, file " + app.getPath('userData') + "/log.log");
+    log.info("Log init, file " + app.getPath('userData') + "/whatsapp.log");
 
     var groupLinkOpenRequested = null;
     if (process.argv.length > 1) {
@@ -132,7 +132,6 @@
         }
         return function() {};
     };
-
 
     global.config = {
         defaultSettings: {
@@ -503,7 +502,17 @@
                 window: whatsApp.window
             });
 
-            whatsApp.window.loadURL('https://web.whatsapp.com');
+            var session = whatsApp.window.webContents.session
+            const userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'
+
+            session.setUserAgent(userAgent)
+
+            require('electron').session.defaultSession.webRequest.onBeforeSendHeaders(function (details, callback) {
+                details.requestHeaders['User-Agent'] = userAgent
+                callback({ cancel: false, requestHeaders: details.requestHeaders })
+            })
+
+            whatsApp.window.loadURL('https://web.whatsapp.com', {userAgent: userAgent});
 
             whatsApp.window.webContents.on('did-finish-load', function() {
                 if (groupLinkOpenRequested != null) {

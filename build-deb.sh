@@ -1,5 +1,8 @@
 #!/bin/sh
 
+npm install
+npm run build:linux
+
 BUILD_DIR="./build/whatsapp-desktop"
 
 rm -R $BUILD_DIR

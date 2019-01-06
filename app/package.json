@@ -4,11 +4,11 @@
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Enrico204/Whatsapp-Desktop.git"
+    "url": "https://github.com/oOthkOo/whatsapp-desktop.git"
   },
   "main": "main.js",
-  "author": "enrico204",
-  "description": "Unofficial whatsapp web desktop client for OSX, Linux and Windows. Build with Electron.",
+  "author": "oothkoo",
+  "description": "Unofficial WhatsApp Desktop Client for OSX, Linux and Windows. Build with Electron.",
   "dependencies": {
     "auto-launch": "^5.0.1",
     "electron-context-menu": "^0.9.1",

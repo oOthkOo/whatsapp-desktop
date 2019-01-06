@@ -53,7 +53,7 @@ cd whatsapp-desktop
 
 ### Install Whatsapp on Debian, Ubuntu, Mint, ...
 
-``sh
+```sh
 sudo dpkg -i ./build/whatsapp-desktop.deb
 ```
 

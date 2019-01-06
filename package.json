@@ -2,7 +2,7 @@
   "name": "whatsapp-desktop",
   "version": "0.5.1",
   "repository": "https://github.com/oOthkOo/whatsapp-desktop.git",
-  "description": "Unofficial WhatsApp Desktop Client. Build with Electron.",
+  "description": "Unofficial WhatsApp Desktop Client for OSX, Linux and Windows. Build with Electron.",
   "main": "main.js",
   "scripts": {
     "dev": "electron --debug=5858 ./app",

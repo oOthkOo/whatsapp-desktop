@@ -12,5 +12,4 @@ electron-*
 *.EX
 dummy.tar.bz2
 rpmbuild/
-build/whatsapp-desktop
-build/whatsapp-desktop.deb
+build/whatsapp-desktop-*

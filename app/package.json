@@ -15,7 +15,7 @@
     "electron-log": "^2.2.7",
     "gettext-parser": "^1.2.2",
     "node-gettext": "^2.0.0",
-    "node-notifier": "^5.1.2",
+    "node-notifier": "^8.0.1",
     "request": "^2.83.0"
   }
 }

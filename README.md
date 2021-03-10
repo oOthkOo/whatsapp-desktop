@@ -64,6 +64,7 @@ cd whatsapp-desktop
 
 ```sh
 sudo dpkg -i ./build/whatsapp-desktop-x64.deb
+sudo apt install -f
 ```
 
 ## Repositories

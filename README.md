@@ -32,6 +32,9 @@ Original versions of WhatsApp Desktop was written by:
   * Set the size for the media thumbs
   * Proxy settings connect to WhatsApp web
 
+## Releases
+* [Mac OSX](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-darwin-x64.zip)
+
 ## Install
 
 Follow these instructions to install `whatsapp-desktop` on your system.

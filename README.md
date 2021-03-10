@@ -32,10 +32,14 @@ Original versions of WhatsApp Desktop was written by:
   * Set the size for the media thumbs
   * Proxy settings connect to WhatsApp web
 
-## Releases
-* [Mac OSX](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-darwin-x64.zip)
+## Download WhatsApp
 
-## Install
+* Windows 10 - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-win32-x64.zip)
+* Mac OSX - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-darwin-x64.zip)
+* Ubuntu (32 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-ia32.deb)
+* Ubuntu (64 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x64.deb)
+
+## Build WhatsApp Debian/Ubuntu packages
 
 Follow these instructions to install `whatsapp-desktop` on your system.
 
@@ -46,9 +50,9 @@ You need NPM and Yarn to be installed on your system before building deb package
 * NPM  : https://nodejs.org/en/download/package-manager/
 * Yarn : https://yarnpkg.com/lang/en/docs/install/
 
-### Build Debian deb 32/64bits packages
+### Build 32/64bits packages
 
-You can build `whatsapp-desktop.deb` package with:
+You can build `whatsapp-desktop-xxx.deb` package with:
 
 ```sh
 git clone https://github.com/oOthkOo/whatsapp-desktop.git
@@ -56,7 +60,7 @@ cd whatsapp-desktop
 ./build-deb-x64.sh # or ./build-deb-ia32.sh for 32 bits
 ```
 
-### Install Whatsapp on Debian, Ubuntu, Mint, ...
+### Install WhatsApp on Debian, Ubuntu, Mint, ...
 
 ```sh
 sudo dpkg -i ./build/whatsapp-desktop-x64.deb

@@ -36,10 +36,10 @@ Original versions of WhatsApp Desktop was written by:
 
 ## Download WhatsApp
 
-* Windows 10 - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-win32-x64.zip)
-* Mac OSX - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-darwin-x64.zip)
-* Ubuntu (32 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x32.deb)
-* Ubuntu (64 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x64.deb)
+* Windows 10 - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-win32-x64.zip) ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/WhatsApp-win32-x64.zip?style=for-the-badge)
+* Mac OSX - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-darwin-x64.zip) ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/WhatsApp-darwin-x64.zip?style=for-the-badge)
+* Ubuntu (32 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x32.deb) ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x32.deb?style=for-the-badge)
+* Ubuntu (64 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x64.deb) ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x64.deb?style=for-the-badge)
 
 ## Build WhatsApp Debian/Ubuntu packages
 

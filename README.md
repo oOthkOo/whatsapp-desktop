@@ -1,3 +1,5 @@
+![downloads](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/total?style=for-the-badge)
+
 # WhatsApp Desktop
 
 ![screenshot](http://i1-win.softpedia-static.com/screenshots/WhatsApp-Desktop_1.png "Main Window")

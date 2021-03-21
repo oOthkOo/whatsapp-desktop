@@ -36,7 +36,7 @@ Original versions of WhatsApp Desktop was written by:
 
 * Windows 10 - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-win32-x64.zip)
 * Mac OSX - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-darwin-x64.zip)
-* Ubuntu (32 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-ia32.deb)
+* Ubuntu (32 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x32.deb)
 * Ubuntu (64 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x64.deb)
 
 ## Build WhatsApp Debian/Ubuntu packages
@@ -57,7 +57,7 @@ You can build `whatsapp-desktop-xxx.deb` package with:
 ```sh
 git clone https://github.com/oOthkOo/whatsapp-desktop.git
 cd whatsapp-desktop
-./build-deb-x64.sh # or ./build-deb-ia32.sh for 32 bits
+./build-deb-x64.sh # or ./build-deb-x32.sh for 32 bits
 ```
 
 ### Install WhatsApp on Debian, Ubuntu, Mint, ...

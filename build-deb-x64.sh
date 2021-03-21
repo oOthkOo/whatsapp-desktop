@@ -7,7 +7,7 @@ BUILD_DIR="./build/whatsapp-desktop-x64"
 
 rm -R $BUILD_DIR
 mkdir -p $BUILD_DIR/DEBIAN
-cp build/debian/* $BUILD_DIR/DEBIAN
+cp build/debian-x64/* $BUILD_DIR/DEBIAN
 mkdir -p $BUILD_DIR/opt/whatsapp-desktop/
 mkdir -p $BUILD_DIR/usr/share/applications/
 mkdir -p $BUILD_DIR/usr/share/icons/hicolor/128x128/apps/

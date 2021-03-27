@@ -41,6 +41,16 @@ Original versions of WhatsApp Desktop was written by:
 * Ubuntu (32 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x32.deb) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x32.deb?style=flat-square)
 * Ubuntu (64 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x64.deb) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x64.deb?style=flat-square)
 
+Donations
+-----
+
+:heart: Donations are always welcome :heart:.
+
+Coins | Symbols | Addresses
+--- | --- | ---
+<img src="https://github.com/oOthkOo/hyper-manager/blob/main/pictures/btc.svg" alt="Bitcoin"/> | BTC | 3B52fbzNFQTaKZxWf5GrCUsASD2UP8na4A
+<img src="https://github.com/oOthkOo/hyper-manager/blob/main/pictures/eth.svg" alt="Ethereum"/> | ETH | 0x1C389f1f85Cdb3C2996b83fAc87E496A80698B7C
+
 ## Build WhatsApp Debian/Ubuntu packages
 
 Follow these instructions to install `whatsapp-desktop` on your system.

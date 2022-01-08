@@ -2,7 +2,7 @@
 
 # WhatsApp Desktop
 
-![screenshot](https://github.com/oOthkOo/hyper-manager/blob/master/whatsapp-screen.png "Main Window")
+![screenshot](https://github.com/oOthkOo/whatsapp-desktop/blob/master/whatsapp-screen.png "Main Window")
 
 Unofficial WhatsApp Desktop Client for OSX, Linux and Windows. Build with [Electron](http://electron.atom.io/).  
 

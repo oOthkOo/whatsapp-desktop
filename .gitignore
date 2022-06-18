@@ -1,7 +1,9 @@
 .idea/*
 .DS_Store
 Thumbs.db
-dist
+build/outputs
+build/releases
+build/dist
 npm-debug.log
 node_modules
 electron-*

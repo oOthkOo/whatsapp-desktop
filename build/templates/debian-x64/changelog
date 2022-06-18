@@ -1,4 +1,10 @@
-whatsapp-desktop (0.5.1) unstable; urgency=high
+whatsapp-desktop (0.5.2) unstable; urgency=high
+
+  * Bump electron to 17.0.0
+
+ -- Tierry <contact@oothkoo.com> 18 June 2022
+
+ whatsapp-desktop (0.5.1) unstable; urgency=high
 
   * Bypass Facebook user agent verification
 

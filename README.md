@@ -2,7 +2,7 @@
 
 # WhatsApp Desktop
 
-![screenshot](https://github.com/oOthkOo/whatsapp-desktop/blob/master/whatsapp-screen.png "Main Window")
+![screenshot](https://github.com/oOthkOo/whatsapp-desktop/blob/master/screenshots/whatsapp-screen.png "Main Window")
 
 Unofficial WhatsApp Desktop Client for OSX, Linux and Windows. Build with [Electron](http://electron.atom.io/).  
 
@@ -36,10 +36,10 @@ Original versions of WhatsApp Desktop was written by:
 
 ## Download WhatsApp
 
-* Windows 10 - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-win32-x64.zip) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/WhatsApp-win32-x64.zip?style=flat-square)
-* Mac OSX - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/WhatsApp-darwin-x64.zip) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/WhatsApp-darwin-x64.zip?style=flat-square)
-* Ubuntu (32 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x32.deb) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x32.deb?style=flat-square)
-* Ubuntu (64 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.1/whatsapp-desktop-x64.deb) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x64.deb?style=flat-square)
+* Windows 10 - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.2/WhatsApp-win32-x64.zip) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/WhatsApp-win32-x64.zip?style=flat-square)
+* Mac OSX - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.2/WhatsApp-darwin-x64.zip) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/WhatsApp-darwin-x64.zip?style=flat-square)
+* Ubuntu (32 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.2/whatsapp-desktop-x32.deb) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x32.deb?style=flat-square)
+* Ubuntu (64 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.2/whatsapp-desktop-x64.deb) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x64.deb?style=flat-square)
 
 Donations
 -----
@@ -62,55 +62,51 @@ You need NPM and Yarn to be installed on your system before building deb package
 * NPM  : https://nodejs.org/en/download/package-manager/
 * Yarn : https://yarnpkg.com/lang/en/docs/install/
 
-### Build 32/64bits packages
+### Build Linux 32/64 bits packages
 
 You can build `whatsapp-desktop-xxx.deb` package with:
 
 ```sh
 git clone https://github.com/oOthkOo/whatsapp-desktop.git
 cd whatsapp-desktop
-./build-deb-x64.sh # or ./build-deb-x32.sh for 32 bits
+./scripts/build-deb-x64.sh # or ./scripts/build-deb-x32.sh for 32 bits
 ```
+
+You'll find debian packages into `build/releases` directory.
 
 ### Install WhatsApp on Debian, Ubuntu, Mint, ...
 
 ```sh
-sudo dpkg -i ./build/whatsapp-desktop-x64.deb
+sudo apt install ./build/releases/whatsapp-desktop-x64.deb
 sudo apt install -f
 ```
-
-## Repositories
-
-Note that these repos are available only for `amd64` (deb+rpm) and `armhf/armv7l` (deb-only).
 
 ## Command line switches
 
     --debug-log         Switch file's log level to "debug" (default: "warn")
 
-## Known issues
-
-### Fonts rendering as rectangles after upgrade
-
-Apparently it's caused by an issue of Electron with an older version of Pango. Upgrade Pango at least to `1.40.12` or downgrade to `1.40.5` should fix this. See https://github.com/Enrico204/Whatsapp-Desktop/issues/13
-
-### Tray Icon is displayed wrong in KDE
-
-This is due to some bugs between Electron and KDE on tray icons, see [this comment on issue #27](https://github.com/Enrico204/Whatsapp-Desktop/issues/27#issuecomment-338410450) and [vector-im/riot-web#3133](https://github.com/vector-im/riot-web/issues/3133). A workaround is to uninstall `libappindicator` and `libappindicator-gtk3` packages (this will change also the behavior of click on the tray icon).
-
 ## Contributions
 
-Contributions are welcome! For feature requests and bug reports please submit an [issue](https://github.com/Enrico204/Whatsapp-Desktop/issues).
+Contributions are welcome! For feature requests and bug reports please submit an [issue](https://github.com/oOthkOo/whatsapp-desktop/issues).
 
 ## Build from source
 
 To build from the source, run the following commands:
 
-    yarn install
-    yarn run build:platform
+```sh
+yarn install
+yarn run build:{platform}
+```
 
-where `build:platform` can be `build:linux` if you want to build for Linux (use `build:linux32` for 32-bit), `build:osx` for OSX only, `build:win` for Windows only, or simply `build` to build for all platforms.
+Platform | OS
+--- | ---
+win | Windows only
+osx | OSX only
+linux | Linux 64 bits
+linux32 | Linux 32 bits
+linuxarmv7l | ARM Linux
 
-You'll find artifacts into `dist/` directory.
+You'll find artifacts into `build/dist/` directory.
 
 ## Run on-the-fly (for devs)
 

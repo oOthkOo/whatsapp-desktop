@@ -102,6 +102,7 @@ Platform | OS
 --- | ---
 win | Windows only
 osx | OSX only
+osxm1 | OSX arm64 (m1)
 linux | Linux 64 bits
 linux32 | Linux 32 bits
 linuxarmv7l | ARM Linux

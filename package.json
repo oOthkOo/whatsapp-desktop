@@ -11,6 +11,7 @@
         "clean": "node ./scripts/clean.js",
         "build:win": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=win32 --arch=x64 --electron-version=17.0.0 --icon=build/assets/win/whatsapp.ico",
         "build:osx": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=darwin --arch=x64 --electron-version=17.0.0 --icon=build/assets/osx/whatsapp.icns",
+        "build:osxm1": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=darwin --arch=arm64 --electron-version=17.0.0 --icon=build/assets/osx/whatsapp.icns",
         "build:linux": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=linux --arch=x64 --electron-version=17.0.0 --icon=build/assets/win/whatsapp.ico",
         "build:linux32": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=linux --arch=ia32 --electron-version=17.0.0 --icon=build/assets/win/whatsapp.ico",
         "build:linuxarmv7l": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=linux --arch=armv7l --electron-version=17.0.0 --icon=build/assets/win/whatsapp.ico"

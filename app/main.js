@@ -55,6 +55,11 @@
         }
     })
 
+    // Needed for @electron/remote to work.
+    app.on('browser-window-created', (_, window) => {
+        require("@electron/remote/main").enable(window.webContents)
+    })
+
     if (!isAlreadyLocked) {
         app.quit()
     }
@@ -789,7 +794,9 @@
                     "center": true,
                     "frame": true,
                     "webPreferences": {
-                      "nodeIntegration": true,
+                        "nodeIntegration": true, 
+                        "contextIsolation": false,
+                        "enableRemoteModule": true,
                     }
                 }
             )

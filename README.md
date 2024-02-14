@@ -36,10 +36,10 @@ Original versions of WhatsApp Desktop was written by:
 
 ## Download WhatsApp
 
-* Windows 10 - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.2/WhatsApp-win32-x64.zip) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/WhatsApp-win32-x64.zip?style=flat-square)
-* Mac OSX - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.2/WhatsApp-darwin-x64.zip) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/WhatsApp-darwin-x64.zip?style=flat-square)
-* Ubuntu (32 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.2/whatsapp-desktop-x32.deb) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x32.deb?style=flat-square)
-* Ubuntu (64 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.2/whatsapp-desktop-x64.deb) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x64.deb?style=flat-square)
+* Windows 10 - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.3/WhatsApp-win32-x64.zip) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/WhatsApp-win32-x64.zip?style=flat-square)
+* Mac OSX - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.3/WhatsApp-darwin-x64.zip) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/WhatsApp-darwin-x64.zip?style=flat-square)
+* Ubuntu (32 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.3/whatsapp-desktop-x32.deb) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x32.deb?style=flat-square)
+* Ubuntu (64 bits) - [Download](https://github.com/oOthkOo/whatsapp-desktop/releases/download/v0.5.3/whatsapp-desktop-x64.deb) - ![Stats](https://img.shields.io/github/downloads/oOthkOo/whatsapp-desktop/latest/whatsapp-desktop-x64.deb?style=flat-square)
 
 Donations
 -----

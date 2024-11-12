@@ -4,30 +4,33 @@
     var updatePhoneInfoInterval = null;
 
     function updatePhoneInfo() {
-        if (window.Store == undefined || window.Store.Conn == undefined) {
-            return;
-        }
-        ipcRenderer.send('phoneinfoupdate', {
-            'info': window.Store.Stream.info,
-            'me': "+" + window.Store.Conn.me.split("@")[0],
-            'battery': window.Store.Conn.battery,
-            'plugged': window.Store.Conn.plugged,
-            'platform': window.Store.Conn.platform,
-            'phoneActive': window.Store.Stream.phoneActive,
-            'phone': {
-                'manufacturer': window.Store.Conn.phone.device_manufacturer,
-                'model': window.Store.Conn.phone.device_model,
-                'mcc': window.Store.Conn.phone.mcc,
-                'mnc': window.Store.Conn.phone.mnc,
-                'os_build_number': window.Store.Conn.phone.os_build_number,
-                'os_version': window.Store.Conn.phone.os_version,
-                'wa_version': window.Store.Conn.phone.wa_version
+        try {
+            if (!window.Store?.Conn) {
+                return;
             }
-        });
-        if (updatePhoneInfoInterval != null) {
-            clearInterval(updatePhoneInfoInterval);
-            updatePhoneInfoInterval = null;
-            setInterval(updatePhoneInfo, 2000)
+            ipcRenderer.send('phoneinfoupdate', {
+                'info': window.Store.Stream.info,
+                'me': "+" + window.Store.Conn.me.split("@")[0],
+                'battery': window.Store.Conn.battery,
+                'plugged': window.Store.Conn.plugged,
+                'platform': window.Store.Conn.platform,
+                'phoneActive': window.Store.Stream.phoneActive,
+                'phone': {
+                    'manufacturer': window.Store.Conn.phone.device_manufacturer,
+                    'model': window.Store.Conn.phone.device_model,
+                    'mcc': window.Store.Conn.phone.mcc,
+                    'mnc': window.Store.Conn.phone.mnc,
+                    'os_build_number': window.Store.Conn.phone.os_build_number,
+                    'os_version': window.Store.Conn.phone.os_version,
+                    'wa_version': window.Store.Conn.phone.wa_version
+                }
+            });
+            if (updatePhoneInfoInterval != null) {
+                clearInterval(updatePhoneInfoInterval);
+            }
+            updatePhoneInfoInterval = setInterval(updatePhoneInfo, 2000);
+        } catch (err) {
+            console.error('Error updating phone info:', err);
         }
     }
 

@@ -515,7 +515,7 @@
             })
 
             // Setting User Agent
-            var userAgent = 'Mozilla/5.0 (X11; Linux x86_64; rv:101.0) Gecko/20100101 Firefox/101.0'
+            var userAgent = 'Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0'
 
             // Pick a random user agent from agents.json
             if (agents.userAgents) {

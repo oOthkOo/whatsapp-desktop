@@ -17,7 +17,7 @@
         "build:linuxarmv7l": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=linux --arch=armv7l --electron-version=17.0.0 --icon=build/assets/win/whatsapp.ico"
     },
     "devDependencies": {
-        "electron": "^17.0.0",
+        "electron": "^35.7.5",
         "electron-packager": "15.5.1"
     },
     "dependencies": {

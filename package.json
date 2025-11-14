@@ -5,7 +5,7 @@
     "description": "Unofficial WhatsApp Desktop Client for OSX, Linux and Windows. Build with Electron.",
     "main": "main.js",
     "scripts": {
-        "dev": "electron --debug=5858 ./app",
+        "dev": "electron --no-sandbox --debug=5858 ./app",
         "preinstall": "cd app && yarn",
         "gettext": "xgettext app/*.js -j --omit-header -o app/locale/messages.pot && xgettext app/html/*.html -L JavaScript -j --omit-header -o app/locale/messages.pot",
         "clean": "node ./scripts/clean.js",
@@ -21,6 +21,7 @@
         "electron-packager": "15.5.1"
     },
     "dependencies": {
+        "@electron/remote": "^2.1.3",
         "process-nextick-args": "^1.0.7",
         "util-deprecate": "^1.0.2"
     }

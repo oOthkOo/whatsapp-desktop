@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Version=1.0
+Version={version}
 Name=WhatsApp
 Comment=WhatsApp Desktop unofficial client
 Exec=/opt/whatsapp-desktop/WhatsApp

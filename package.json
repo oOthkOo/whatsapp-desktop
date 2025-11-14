@@ -8,20 +8,20 @@
         "dev": "electron --no-sandbox --debug=5858 ./app",
         "preinstall": "cd app && yarn",
         "gettext": "xgettext app/*.js -j --omit-header -o app/locale/messages.pot && xgettext app/html/*.html -L JavaScript -j --omit-header -o app/locale/messages.pot",
-        "clean": "node ./scripts/clean.js",
-        "build:win": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=win32 --arch=x64 --electron-version=17.0.0 --icon=build/assets/win/whatsapp.ico",
-        "build:osx": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=darwin --arch=x64 --electron-version=17.0.0 --icon=build/assets/osx/whatsapp.icns",
-        "build:osxm1": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=darwin --arch=arm64 --electron-version=17.0.0 --icon=build/assets/osx/whatsapp.icns",
-        "build:linux": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=linux --arch=x64 --electron-version=17.0.0 --icon=build/assets/win/whatsapp.ico",
-        "build:linux32": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=linux --arch=ia32 --electron-version=17.0.0 --icon=build/assets/win/whatsapp.ico",
-        "build:linuxarmv7l": "electron-packager ./app \"WhatsApp\" --overwrite --out=build/dist --package-manager=yarn --platform=linux --arch=armv7l --electron-version=17.0.0 --icon=build/assets/win/whatsapp.ico"
+        "clean": "./scripts/clean.sh",
+        "build:win": "./scripts/build-win-x64.sh",
+        "build:osx": "./scripts/build-darwin-x64.sh",
+        "build:osxm1": "./scripts/build-darwin-arm64.sh",
+        "build:linux": "./scripts/build-linux-x64.sh",
+        "build:linux32": "./scripts/build-linux-x32.sh",
+        "build:linuxarmv7l": "./scripts/build-linux-armv7l.sh",
+        "build:all": "./scripts/build-all.sh"
     },
     "devDependencies": {
         "electron": "^17.0.0",
         "electron-packager": "15.5.1"
     },
     "dependencies": {
-        "@electron/remote": "^2.1.3",
         "process-nextick-args": "^1.0.7",
         "util-deprecate": "^1.0.2"
     }

@@ -1,5 +1,5 @@
 Source: whatsapp-desktop
-Version: 0.5.3
+Version: {version}
 Section: net
 Priority: optional
 Maintainer: Tierry Danquin <contact@oothkoo.com>
@@ -8,6 +8,5 @@ Standards-Version: 3.9.5
 Homepage: https://github.com/oothkoo/whatsapp-desktop
 Vcs-Git: https://github.com/oothkoo/whatsapp-desktop.git
 Package: whatsapp-desktop
-Architecture: i386
-Depends: libnotify4, gconf2, libgconf-2-4
+Architecture: amd64
 Description: Unofficial whatsapp web desktop client for OSX, Linux and Windows. Build with Electron.

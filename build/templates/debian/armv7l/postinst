@@ -21,6 +21,8 @@ case "$1" in
 
   configure)
     ln -s /opt/whatsapp-desktop/WhatsApp /usr/local/bin/WhatsApp
+    chown root:root /opt/whatsapp-desktop/chrome-sandbox
+    chmod 4755 /opt/whatsapp-desktop/chrome-sandbox
   ;;
 
   abort-upgrade|abort-remove|abort-deconfigure)

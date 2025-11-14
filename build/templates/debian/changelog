@@ -1,3 +1,9 @@
+whatsapp-desktop (0.5.3) unstable; urgency=high
+
+  * Bugfix
+  
+ -- Tierry <contact@oothkoo.com> 14 November 2025
+
 whatsapp-desktop (0.5.2) unstable; urgency=high
 
   * Bump electron to 17.0.0

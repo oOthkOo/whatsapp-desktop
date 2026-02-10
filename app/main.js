@@ -366,7 +366,6 @@
             global.whatsApp.oldIconStatus = 0
             global.whatsApp.newVersion = null
 
-            whatsApp.clearCache()
             whatsApp.openWindow()
             config.applyConfiguration()
         },
@@ -483,16 +482,6 @@
             })
 
             whatsApp.tray.setToolTip('WhatsApp Desktop')
-        },
-
-        clearCache() {
-            log.info("Clearing cache")
-            try {
-                fs.unlinkSync(app.getPath('userData') + '/Application Cache/Index')
-            }
-            catch (e) {
-                log.warn("Error clearing cache: " + e)
-            }
         },
 
         openWindow() {

@@ -61,14 +61,13 @@
     }, false);
 
     setInterval(function() {
+        if (!window.audioRate || window.audioRate === 1) return;
         Array.from(document.querySelectorAll('audio')).map(function(audio) {
-            audio.playbackRate = (window.audioRate || 1)
+            audio.playbackRate = window.audioRate;
         });
-        if (window.audioRate) {
-            Array.from(document.querySelectorAll('.meta-audio *:first-child')).map(function(span) {
-                span.innerHTML = window.audioRate.toFixed(1) + "x&nbsp;";
-            });
-        }
+        Array.from(document.querySelectorAll('.meta-audio *:first-child')).map(function(span) {
+            span.innerHTML = window.audioRate.toFixed(1) + "x&nbsp;";
+        });
     }, 200);
 
     var NativeNotification = Notification;

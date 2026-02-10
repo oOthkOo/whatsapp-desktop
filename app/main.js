@@ -519,11 +519,6 @@
             log.info(`User Agent selected: ${userAgent}`)
             whatsApp.window.webContents.setUserAgent(userAgent)
 
-            electron.session.defaultSession.webRequest.onBeforeSendHeaders(function (details, callback) {
-                details.requestHeaders['User-Agent'] = userAgent
-                callback({ cancel: false, requestHeaders: details.requestHeaders })
-            })
-
             whatsApp.window.loadURL('https://web.whatsapp.com', {
                 userAgent: userAgent
             })

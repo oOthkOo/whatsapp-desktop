@@ -26,8 +26,7 @@
         });
         if (updatePhoneInfoInterval != null) {
             clearInterval(updatePhoneInfoInterval);
-            updatePhoneInfoInterval = null;
-            setInterval(updatePhoneInfo, 2000)
+            updatePhoneInfoInterval = setInterval(updatePhoneInfo, 2000);
         }
     }
 

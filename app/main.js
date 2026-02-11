@@ -12,7 +12,7 @@
     const log = require('electron-log')
     const join = require('path').join
     const notifier = require('node-notifier')
-    const ContextMenu = require('electron-context-menu')
+    // electron-context-menu replaced with custom handler that supports spellcheck suggestions
 
     const app = electron.app
     const AppMenu = electron.Menu
@@ -511,12 +511,66 @@
                 "icon": __dirname + "/assets/icon/icon.png",
                 "webPreferences": {
                   "nodeIntegration": false,
+                  "spellcheck": true,
                   "preload": join(__dirname, 'js', 'injected.js')
                 }
             })
 
-            ContextMenu({
-                window: whatsApp.window
+            // Custom context menu with spellcheck suggestions
+            whatsApp.window.webContents.on('context-menu', (event, params) => {
+                const menu = new AppMenu()
+
+                // Add spelling suggestions if there's a misspelled word
+                if (params.misspelledWord) {
+                    if (params.dictionarySuggestions.length > 0) {
+                        params.dictionarySuggestions.forEach(suggestion => {
+                            menu.append(new MenuItem({
+                                label: suggestion,
+                                click: () => whatsApp.window.webContents.replaceMisspelling(suggestion)
+                            }))
+                        })
+                    } else {
+                        menu.append(new MenuItem({
+                            label: 'No suggestions available',
+                            enabled: false
+                        }))
+                    }
+                    menu.append(new MenuItem({ type: 'separator' }))
+
+                    // Add to dictionary option
+                    menu.append(new MenuItem({
+                        label: 'Add to Dictionary',
+                        click: () => whatsApp.window.webContents.session.addWordToSpellCheckerDictionary(params.misspelledWord)
+                    }))
+                    menu.append(new MenuItem({ type: 'separator' }))
+                }
+
+                // Standard editing options for editable fields
+                if (params.isEditable) {
+                    menu.append(new MenuItem({ label: 'Cut', role: 'cut', enabled: params.editFlags.canCut }))
+                    menu.append(new MenuItem({ label: 'Copy', role: 'copy', enabled: params.editFlags.canCopy }))
+                    menu.append(new MenuItem({ label: 'Paste', role: 'paste', enabled: params.editFlags.canPaste }))
+                    menu.append(new MenuItem({ label: 'Select All', role: 'selectAll', enabled: params.editFlags.canSelectAll }))
+                } else if (params.selectionText) {
+                    menu.append(new MenuItem({ label: 'Copy', role: 'copy' }))
+                }
+
+                // Link options
+                if (params.linkURL) {
+                    if (menu.items.length > 0) {
+                        menu.append(new MenuItem({ type: 'separator' }))
+                    }
+                    menu.append(new MenuItem({
+                        label: 'Copy Link',
+                        click: () => {
+                            electron.clipboard.writeText(params.linkURL)
+                        }
+                    }))
+                }
+
+                if (menu.items.length > 0) {
+                    menu.popup({ window: whatsApp.window })
+                }
             })
 
             // Setting User Agent

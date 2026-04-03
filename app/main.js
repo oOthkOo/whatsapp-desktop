@@ -366,7 +366,6 @@
             global.whatsApp.oldIconStatus = 0
             global.whatsApp.newVersion = null
 
-            whatsApp.clearCache()
             whatsApp.openWindow()
             config.applyConfiguration()
         },
@@ -485,16 +484,6 @@
             whatsApp.tray.setToolTip('WhatsApp Desktop')
         },
 
-        clearCache() {
-            log.info("Clearing cache")
-            try {
-                fs.unlinkSync(app.getPath('userData') + '/Application Cache/Index')
-            }
-            catch (e) {
-                log.warn("Error clearing cache: " + e)
-            }
-        },
-
         openWindow() {
             log.info("Open main window")
             whatsApp.window = new BrowserWindow({
@@ -583,11 +572,6 @@
             }
             log.info(`User Agent selected: ${userAgent}`)
             whatsApp.window.webContents.setUserAgent(userAgent)
-
-            electron.session.defaultSession.webRequest.onBeforeSendHeaders(function (details, callback) {
-                details.requestHeaders['User-Agent'] = userAgent
-                callback({ cancel: false, requestHeaders: details.requestHeaders })
-            })
 
             whatsApp.window.loadURL('https://web.whatsapp.com', {
                 userAgent: userAgent

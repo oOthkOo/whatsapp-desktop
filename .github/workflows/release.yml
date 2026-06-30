@@ -1,0 +1,119 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+permissions:
+  contents: write
+
+jobs:
+  build-mac:
+    name: Build macOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm install
+      - name: Build macOS platforms
+        run: |
+          npm run clean
+          npm run build:osx
+          npm run build:osxm1
+      - name: Upload macOS binaries
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/releases/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dpkg
+          npm install
+      - name: Build Linux platforms
+        run: |
+          npm run clean
+          npm run build:linux
+          npm run build:linux32
+          npm run build:linuxarmv7l
+      - name: Upload Linux binaries
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/releases/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-win:
+    name: Build Windows
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install Yarn globally
+        run: npm install -g yarn
+      - name: Install dependencies
+        run: npm install
+      - name: Build Windows platform
+        shell: pwsh
+        run: |
+          $env:APP_ARCH = "x64"
+          $env:APP_PLATFORM = "win32"
+          $env:APP_ICON_PATH = "assets/win/whatsapp.ico"
+
+          # Load constants
+          $ELECTRON_VERSION = (Get-Content scripts/constants.sh | Select-String 'ELECTRON_VERSION=').ToString().Split('=')[1].Trim('"')
+          $APP_NAME = (Get-Content scripts/constants.sh | Select-String 'APP_NAME=').ToString().Split('=')[1].Trim('"')
+          $DIST_DIR = "build/dist"
+          $RELEASES_DIR = "build/releases"
+
+          # Install deps
+          npm install
+          Push-Location app; npm prune --production; Pop-Location
+
+          # Create output dirs
+          New-Item -ItemType Directory -Force -Path $DIST_DIR | Out-Null
+          New-Item -ItemType Directory -Force -Path $RELEASES_DIR | Out-Null
+
+          # Package
+          npx electron-packager ./app $APP_NAME `
+            --overwrite `
+            --prune=true `
+            --out=$DIST_DIR `
+            --platform=win32 `
+            --arch=x64 `
+            --electron-version=$ELECTRON_VERSION `
+            --icon=build/assets/win/whatsapp.ico
+
+          # Zip the output
+          $APP_DIR = "$DIST_DIR\$APP_NAME-win32-x64"
+          $ZIP_NAME = "$APP_NAME-win32-x64"
+          Compress-Archive -Path "$APP_DIR\*" -DestinationPath "$RELEASES_DIR\$ZIP_NAME.zip" -Force
+          Write-Host "Built: $RELEASES_DIR\$ZIP_NAME.zip"
+      - name: Upload Windows binaries
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/releases/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
